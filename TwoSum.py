@@ -14,8 +14,9 @@
 def TwoSum(numbers, target):
     mapValues = {}
     for i in range(len(numbers)):
-        if(numbers[i] in mapValues.keys()):
-            return [mapValues[numbers[i]], i]
+        currentVal = mapValues.get(numbers[i], None)
+        if(currentVal is not None):
+            return [currentVal, i]
         else:
             numberToFind = target - numbers[i]
             mapValues[numberToFind] = i
