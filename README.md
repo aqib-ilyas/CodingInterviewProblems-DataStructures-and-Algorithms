@@ -1,2 +1,2 @@
 # CodingInterviewProblems-DataStructures-and-Algorithms
-This repository includes common coding problems used in interviews
+This repository contain common coding problems used in interviews
