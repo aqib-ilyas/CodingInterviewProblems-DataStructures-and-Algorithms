@@ -13,13 +13,12 @@
 const minimumTravelDistanceBlock = (blocks, reqs) => {
     
     // Initializing result array with max integer values
-    let results = Array.from(Array(blocks.length), () => { 
-        return {
-            'gym': Number.MAX_SAFE_INTEGER,
-            'school': Number.MAX_SAFE_INTEGER,
-            'store': Number.MAX_SAFE_INTEGER,
-            'index': -1
-        }; 
+    let results = Array.from(Array(blocks.length), () => {
+        let obj = {};
+        for(let r of reqs){
+            obj[r] = Number.MAX_SAFE_INTEGER;
+        }
+        return { ...obj, 'index': -1}; 
         
     });
     
@@ -64,6 +63,7 @@ const minimumTravelDistanceBlock = (blocks, reqs) => {
             myBlock = {...results[i], max: max};
         }
     }
+    console.log(results);
     return blocks[myBlock.index];
 }
 
