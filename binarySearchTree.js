@@ -68,7 +68,7 @@ class BinarySearchTree{
     // Deletion of leaf node results in null value
     // Deletion of node with single child results in replacement 
     // otherwise, deleted node will be replaced with minimum data node from it's right subtree
-    
+
     remove(value){
         if(this.root === null) return undefined;
         
@@ -168,18 +168,17 @@ class BinarySearchTree{
         return visited;
     }
     
-    
 }
 
 
 // Creating a binary tree
-const input = [35, 33, 42, 10, 14, 19, 27, 44, 26, 31];
+const input = [10, 7, 14, 20, 1, 5, 8];
 let bst = new BinarySearchTree();
 for(let i = 0; i < input.length; i++){
     bst.insert(input[i]);
 }
+console.log(bst.inOrder());
 console.log(bst.search(27));
 console.log(bst.remove(35));
-console.log(bst.inOrder());
 console.log(bst.postOrder());
 console.log(bst.preOrder());
